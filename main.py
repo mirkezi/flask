@@ -1,6 +1,9 @@
 from flask import Flask, render_template
+from news import News
 
 app = Flask(__name__)
+
+News = News()
 
 
 @app.route('/')
@@ -18,9 +21,9 @@ def forum():
     return render_template('forum.html')
 
 
-@app.route('/terminal')
+@app.route('/news')
 def terminal():
-    return render_template('terminal.html')
+    return render_template('news.html', news=News)
 
 if __name__ == "__main__":
     app.run(debug=True)

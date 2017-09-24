@@ -1,0 +1,10 @@
+{% extends 'layout.html'%}
+
+{% block body %}
+    <h1>News</h1>
+    <ul class="list-group">
+    {% for news in news %}
+        <li class="list-group-item">{{news.title}}<br><br>{{news.body}}<br><br>{{news.author}}<br><br>{{news.create_date}}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
