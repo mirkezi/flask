@@ -5,6 +5,12 @@ app = Flask(__name__)
 
 News = News()
 
+import sqlite3
+
+connection = sqlite3.connet('/userdb/login.db')
+
+cursor = connection.cursor()
+
 
 @app.route('/')
 def index():
