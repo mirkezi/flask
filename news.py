@@ -17,4 +17,3 @@ def News():
     ]
 
     return news
-
