@@ -34,9 +34,6 @@ def forum():
 def terminal():
     return render_template('news.html', news=News)
 
-@app.route('/login')
-def login():
-    return render_template('login.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
