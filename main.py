@@ -5,6 +5,15 @@ app = Flask(__name__)
 
 News = News()
 
+class Login:
+
+    __username: None
+    __password: None
+
+    def __init__(self, username, password):
+        self.__username = username
+        self.__password = password
+
 
 @app.route('/')
 def index():

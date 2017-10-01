@@ -1,21 +1,18 @@
 import sqlite3
+from main import Login
 
 conn = sqlite3.connect('login.db')
 
 c = conn.cursor()
-if TABLE user == 'none':
-    c.execute("""CREATE TABLE user (
+
+c.execute("""CREATE table IF NOT EXIST user (
             username text,
             password text
     )""")
-else:
-    c.execute ("INSERT INTO user VALUES ('mirkezi', 'asdasd')")
+    
+user1 = Login('mirkezi', 'asdasd' )
 
-conn.commit()
-
-c.execute("SELECT * FROM user WHERE username = 'mirkezi'")
-
-print(c.fetcone())
+c.execute ("INSERT INTO user VALUES (:username, :password)", {'username': user1.username}{'password': user1.password})
 
 conn.commit()
 
